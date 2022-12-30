@@ -2,7 +2,6 @@ const http = require('http');
 const fs = require('fs');
 
 const server = http.createServer((req, res)=>{
-    //console.log('request received');
     res.setHeader('Content-Type', 'text/html');
 
     let path = './page/'
@@ -26,7 +25,6 @@ const server = http.createServer((req, res)=>{
     }
 
     fs.readFile(path, (error, data)=>{
-        //console.log('hi')
         if (error)
             console.log(error)
         else
@@ -34,7 +32,6 @@ const server = http.createServer((req, res)=>{
 
         res.end()
     })
-    //console.log('hi2')
 })
 
 server.listen(3000, 'localhost', ()=>{
